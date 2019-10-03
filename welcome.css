@@ -1,8 +1,7 @@
 body{
     background-image: url("img/background.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
-
+    background-size: 100% 100%;
 }
 .navbar{
     background-color: rgb(224, 103, 103);
