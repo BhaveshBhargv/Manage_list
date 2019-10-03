@@ -39,10 +39,4 @@ for (var i = 0; i < del.length; i++) {
         div.style.display = "none";
     }
 }
-var done = document.getElementsByTagName("LI");
-for (var i = 0; i < done.length; i++){
-    done[i].onclick = function() {
-        done[i].style.textDecoration = "line-through";
-    }
-}
     

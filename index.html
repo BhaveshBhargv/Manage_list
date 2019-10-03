@@ -22,10 +22,10 @@
         </a>
         <ul class="nav-item">
             <li>
-                <button onclick="location.href='register.html'">Register</button>
+                <button data-toggle="modal" data-target="#registerModal">Register</button>
             </li>
             <li>
-                <button data-toggle="modal" data-target="#myModal">Login</button>
+                <button data-toggle="modal" data-target="#loginModal">Login</button>
             </li>
         </ul>
     </nav>
@@ -35,7 +35,7 @@
     </div>
    
 
-    <div class="modal" id="myModal">
+    <div class="modal" id="loginModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -51,6 +51,28 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="location.href='home.html'">Login</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="registerModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Register</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form> 
+                        <input type="text" placeholder="&#xf007; Name"><br>
+                        <input type="text" placeholder="&#xf0e0; Email"><br>
+                        <input type="text" placeholder="&#xf023; Password"><br>
+                        <input type="text" placeholder="&#xf023; Re-enter Password"><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="location.href='home.html'">Register</button>
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
