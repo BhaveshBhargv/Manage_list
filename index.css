@@ -1,8 +1,3 @@
-body{
-    background-image: url("img/background.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
 .navbar{
     background-color: rgb(224, 103, 103);
     padding: 10px;
@@ -32,13 +27,22 @@ li button:hover{
     color: white;
 }
 .welcome{
+    width: 100%;
+    height: 100%;
+    position: fixed;
     padding: 100px;
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 #textName{
-    font-size: 65px;
+    font-size: 80px;
     text-align: center;
     vertical-align: middle;
     font-weight: bold;
+    background: linear-gradient(to right, rgb(73, 230, 230) 0%, #e41fda);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 /* login modal */
@@ -52,5 +56,10 @@ li button:hover{
 form input{
     font-family:Arial, FontAwesome; 
     font-size: 20px;
+}
+form div{
     margin-bottom: 20px;
+}
+.error{
+    color: red;
 }

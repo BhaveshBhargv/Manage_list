@@ -10,14 +10,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="welcome.css">
+    <link rel="stylesheet" href="index.css">
 
     <title>Document</title>
 
 </head>
 <body>
     <nav class="navbar">
-        <a class="nav-item"  href="img/elcome.html"> 
+        <a class="nav-item"  href="index.html"> 
             <img src="img/mainlogo.png" class="mainLogo" alt="LOGO">
         </a>
         <ul class="nav-item">
@@ -30,7 +30,7 @@
         </ul>
     </nav>
     <div class="welcome">
-        <h1 style="font-size: 50px;">Welcome To,</h1><br>
+        <h1 style="font-size: 50px; font-weight: bold;">Welcome To,</h1><br>
         <h1 id="textName">DRIYA TASK MANAGER</h1>
     </div>
    
@@ -43,15 +43,13 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form> 
-                        <input type="text" placeholder="&#xf007; Username"><br>
-                        <input type="text" placeholder="&#xf023; Password"><br>
-                        <a href="#"><i class="fa fa-key"></i>Forgot Password</a>
+                    <form name="login_form" onsubmit="return login()" action="home.html"> 
+                        <input type="text" id="username" name="username" placeholder="&#xf007; Username"><div id="username_error"></div>
+                        <input type="text" id="login_password" name="login_password" placeholder="&#xf023; Password"><div id="login_password_error"></div>
+                        <a href="#"><i class="fa fa-key"></i>Forgot Password</a><div></div>
+                        <button type="submit" class="btn btn-primary" style="margin-right: 10px">Login</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="location.href='home.html'">Login</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -64,19 +62,19 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form> 
-                        <input type="text" placeholder="&#xf007; Name"><br>
-                        <input type="text" placeholder="&#xf0e0; Email"><br>
-                        <input type="text" placeholder="&#xf023; Password"><br>
-                        <input type="text" placeholder="&#xf023; Re-enter Password"><br>
+                    <form name="register_form" onsubmit="return register()"> 
+                        <input type="text" id="name" name="name" placeholder="&#xf007; Name"><div class="error" id="name_error"></div>
+                        <input type="email" id="email" name="email" placeholder="&#xf0e0; Email"><div class="error" id="email_error"></div>
+                        <input type="password" id="password" name="password" placeholder="&#xf023; Password"><div class="error" id="password_error"></div>
+                        <input type="password" id="rePassword" name="rePassword" placeholder="&#xf023; Re-enter Password"><div class="error" id="repassword_error"></div>
+                        <button type="submit" class="btn btn-primary" style="margin-right: 20px">Register</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="location.href='home.html'">Register</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
+                    
             </div>
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
