@@ -1,10 +1,5 @@
-body{
-    background-image: url(img/homebgrnd.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .navbar{
-    background-color: rgb(224, 103, 103);
+    background-color: #62008591;
     padding: 10px;
 }
 .mainLogo{
@@ -24,11 +19,19 @@ nav button:hover{
     background-color: rgb(240, 158, 35); 
     color: white;
 }
-.container{
-    background-color: rgb(224, 116, 116);
-    padding: 10px;
-    margin: 40px;
-    margin-bottom: 10px;
+#container{
+    background-image: url(img/homebgrnd.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+#inputdiv{
+    background-color: #62008591;
+    margin: 30px;
+    padding: 20px 5px;
+    
 }
 form{
     margin: 0px;
