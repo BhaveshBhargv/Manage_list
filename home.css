@@ -19,6 +19,8 @@ nav button:hover{
     background-color: rgb(240, 158, 35); 
     color: white;
 }
+
+
 #container{
     background-image: url(img/homebgrnd.jpg);
     background-repeat: no-repeat;
@@ -31,21 +33,6 @@ nav button:hover{
     background-color: #62008591;
     margin: 30px;
     padding: 20px 5px;
-    
-}
-form{
-    margin: 0px;
-    padding: 10px;
-}
-input{
-    width: 80%;
-    padding: 10px;
-    border: 0px;
-}
-#btn{
-    width: 19%;
-    padding: 10px;
-    border: 0px;
 }
 ul{
     list-style-type: none;

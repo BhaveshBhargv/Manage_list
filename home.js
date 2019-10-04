@@ -1,10 +1,13 @@
 function add() {
     var li = document.createElement("li");
     var inputValue = document.getElementById("input").value;
-    var temp = document.createTextNode(inputValue);
+    var date = document.getElementById("date").value;
+    var temp = document.createTextNode(inputValue+'  (complete by: '+date+')');
     li.appendChild(temp);
-    if (inputValue === '') {
+    if ( inputValue === '') {
         alert("You must write something!");
+    } else if (date === ''){
+        alert("Please enter complete by date")
     } else {
         document.getElementById("todo").appendChild(li);
     }
