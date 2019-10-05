@@ -1,7 +1,7 @@
 function add() {
     var li = document.createElement("li");
     var inputValue = document.getElementById("input").value;
-    var date = document.getElementById("date").value;
+    var date = document.getElementById("datePickerId").value;
     var temp = document.createTextNode('(complete by: '+date+') '+inputValue);
     var div = document.createElement("div");
     div.appendChild(temp)
@@ -14,7 +14,7 @@ function add() {
         document.getElementById("todo").appendChild(li);
     }
     document.getElementById("input").value = "";
-    document.getElementById("date").value = "";
+    document.getElementById("datePickerId").value = "";
 
     var btn1 = document.createElement("BUTTON");
     var icon1 = document.createTextNode("\uf1f8");
@@ -48,9 +48,13 @@ function add() {
                 temp2[0].contentEditable = true;
                 temp2[0].style.backgroundColor = 'white';
             }
+            if(temp2[0].innerText == ""){
+                temp.style.display = "none";
+            }
         }
     }
 }
+
 datePickerId.min = new Date().toISOString().split("T")[0];
 
     
