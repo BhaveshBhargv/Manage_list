@@ -2,8 +2,10 @@ function add() {
     var li = document.createElement("li");
     var inputValue = document.getElementById("input").value;
     var date = document.getElementById("date").value;
-    var temp = document.createTextNode(inputValue+'  (complete by: '+date+')');
-    li.appendChild(temp);
+    var temp = document.createTextNode('(complete by: '+date+') '+inputValue);
+    var div = document.createElement("div");
+    div.appendChild(temp)
+    li.appendChild(div);
     if ( inputValue === '') {
         alert("You must write something!");
     } else if (date === ''){
@@ -12,34 +14,43 @@ function add() {
         document.getElementById("todo").appendChild(li);
     }
     document.getElementById("input").value = "";
+    document.getElementById("date").value = "";
 
-    var btn = document.createElement("BUTTON");
-    var txt = document.createTextNode("\uf1f8");
-    btn.className = "delete";
-    btn.appendChild(txt);
-    li.appendChild(btn);
+    var btn1 = document.createElement("BUTTON");
+    var icon1 = document.createTextNode("\uf1f8");
+    btn1.className = "btn delete";
+    btn1.appendChild(icon1);
+    li.appendChild(btn1);
 
-    for (i = 0; i < del.length; i++) {
+    var btn2 = document.createElement("BUTTON");
+    var icon2 = document.createTextNode("\uf040");
+    btn2.className = "btn edit";
+    btn2.appendChild(icon2);
+    li.appendChild(btn2);
+
+    var del = document.getElementsByClassName("delete");
+    for (var i = 0; i < del.length; i++) {
         del[i].onclick = function() {
             var div = this.parentElement;
             div.style.display = "none";
         }
     }
-}
-var list = document.getElementsByTagName("LI");
-for (var i = 0; i < list.length; i++) {
-    var btn = document.createElement("BUTTON");
-    var txt = document.createTextNode("\u00D7");
-    btn.appendChild(txt);
-    list[i].appendChild(btn);
-    btn.className = "delete";
-}
 
-var del = document.getElementsByClassName("delete");
-for (var i = 0; i < del.length; i++) {
-    del[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
+    var edt = document.getElementsByClassName('edit');
+    for (var i = 0; i < edt.length; i++) {
+        edt[i].onclick = function() {
+            var temp = this.parentElement;
+            var temp2 = temp.childNodes;
+            if(temp2[0].contentEditable == "true"){
+                temp2[0].contentEditable = false;
+                temp2[0].style.backgroundColor = '';
+            } else {
+                temp2[0].contentEditable = true;
+                temp2[0].style.backgroundColor = 'white';
+            }
+        }
     }
 }
+datePickerId.min = new Date().toISOString().split("T")[0];
+
     

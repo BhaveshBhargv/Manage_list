@@ -33,8 +33,6 @@
         <h1 style="font-size: 50px; font-weight: bold;">Welcome To,</h1><br>
         <h1 id="textName">DRIYA TASK MANAGER</h1>
     </div>
-   
-
     <div class="modal" id="loginModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -44,9 +42,9 @@
                 </div>
                 <div class="modal-body">
                     <form name="login_form" onsubmit="return login()" action="home.html"> 
-                        <input type="text" id="username" name="username" placeholder="&#xf007; Username"><div id="username_error"></div>
-                        <input type="text" id="login_password" name="login_password" placeholder="&#xf023; Password"><div id="login_password_error"></div>
-                        <a href="#"><i class="fa fa-key"></i>Forgot Password</a><div></div>
+                        <input type="text" id="username" name="username" placeholder="&#xf007; Username" required>
+                        <input type="text" id="login_password" name="login_password" placeholder="&#xf023; Password" required><br>
+                        <a href="#"><i class="fa fa-key"></i>Forgot Password</a><br><br>
                         <button type="submit" class="btn btn-primary" style="margin-right: 10px">Login</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </form>
@@ -62,11 +60,13 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form name="register_form" onsubmit="return register()"> 
-                        <input type="text" id="name" name="name" placeholder="&#xf007; Name"><div class="error" id="name_error"></div>
-                        <input type="email" id="email" name="email" placeholder="&#xf0e0; Email"><div class="error" id="email_error"></div>
-                        <input type="password" id="password" name="password" placeholder="&#xf023; Password"><div class="error" id="password_error"></div>
-                        <input type="password" id="rePassword" name="rePassword" placeholder="&#xf023; Re-enter Password"><div class="error" id="repassword_error"></div>
+                    <form id="register_form" onsubmit="return register()"> 
+                        <input type="text" id="name" placeholder="&#xf007; Name"  required>
+                        <div id="email_error" style="color: red"></div>
+                        <input type="email" id="email" placeholder="&#xf0e0; Email" onclick="validateEmail()" onkeyup="validateEmail()" onchange="validateEmail()" required>
+                        <input type="password" id="password" placeholder="&#xf023; Password" required>
+                        <div id="not_match" style="color: red"></div>
+                        <input type="password" id="rePassword" onclick="matchPassword()" onkeyup="matchPassword()" onchange="matchPassword()" name="rePassword" placeholder="&#xf023; Re-enter Password" required><br>
                         <button type="submit" class="btn btn-primary" style="margin-right: 20px">Register</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </form>

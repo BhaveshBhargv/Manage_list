@@ -14,13 +14,12 @@ nav button{
     -webkit-transition-duration: 0.2s; 
     transition-duration: 0.4s;
     border: 2px solid rgb(240, 35, 189);
+    border-radius: 10px;
 }
 nav button:hover{
     background-color: rgb(240, 158, 35); 
     color: white;
 }
-
-
 #container{
     background-image: url(img/homebgrnd.jpg);
     background-repeat: no-repeat;
@@ -34,6 +33,9 @@ nav button:hover{
     margin: 30px;
     padding: 20px 5px;
 }
+#input{
+    font-size: 18px;
+}
 ul{
     list-style-type: none;
     margin: 20px;
@@ -45,11 +47,17 @@ li{
     font-family: Arial, FontAwesome;
     border-radius: 10px;
     padding: 10px;
-
+ }
+li div{
+    display: inline-block;
+    width: 80%;
+    padding: 5px 5px;
 }
-.delete{
+.btn{
     background-color: rgb(224, 116, 116);
-    color: white; 
+    margin-left: 10px;
+    color: white;
     border: none;
     float: right;
-}   
+    padding: 5px 5px;
+}
