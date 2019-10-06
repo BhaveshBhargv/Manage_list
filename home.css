@@ -51,6 +51,7 @@ body{
      }
     li div{
         display: inline-block;
+        min-width: 50px;
         max-width: 60%;
         padding: 5px 5px;
         font-weight: bold;
