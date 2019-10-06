@@ -30,7 +30,7 @@
         </ul>
     </nav>
     <div class="welcome">
-        <h1 style="font-size: 50px; font-weight: bold;">Welcome To,</h1><br>
+        <h2>Welcome To,</h1><br>
         <h1 id="textName">DRIYA TASK MANAGER</h1>
     </div>
     <div class="modal" id="loginModal">
@@ -63,10 +63,10 @@
                     <form id="register_form" onsubmit="return register()"> 
                         <input type="text" id="name" placeholder="&#xf007; Name"  required>
                         <div id="email_error" style="color: red"></div>
-                        <input type="email" id="email" placeholder="&#xf0e0; Email" onclick="validateEmail()" onkeyup="validateEmail()" onchange="validateEmail()" required>
+                        <input type="email" id="email" placeholder="&#xf0e0; Email"  onkeyup="validateEmail()" onchange="validateEmail()" required>
                         <input type="password" id="password" placeholder="&#xf023; Password" required>
                         <div id="not_match" style="color: red"></div>
-                        <input type="password" id="rePassword" onclick="matchPassword()" onkeyup="matchPassword()" onchange="matchPassword()" name="rePassword" placeholder="&#xf023; Re-enter Password" required><br>
+                        <input type="password" id="rePassword" onkeyup="matchPassword()" onchange="matchPassword()" name="rePassword" placeholder="&#xf023; Re-enter Password" required><br>
                         <button type="submit" class="btn btn-primary" style="margin-right: 20px">Register</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </form>

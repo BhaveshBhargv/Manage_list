@@ -1,14 +1,18 @@
+body{
+    font-family: 'Playfair Display', serif !important;
+    background-image: linear-gradient(to left, #fc466b, #3f5efb);
+}
 .navbar{
-    background-color: #62008591;
+    background-color: transparent;
     padding: 10px;
 }
 .mainLogo{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 ul{
     float: right;
-    padding-top: 10px;
+    
 }
 li{
     display: inline;
@@ -20,34 +24,62 @@ li button{
     background-color: white;
     -webkit-transition-duration: 0.2s; 
     transition-duration: 0.4s;
-    border: 2px solid rgb(85, 0, 255);
+    border: none;
+    margin-top: 10px;
     border-radius: 10px;
 }
 li button:hover{
-    background-color: rgb(240, 158, 35); 
+    background-color: #3f5efb; 
     color: white;
 }
-.welcome{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    padding: 100px;
-    background-image: url("img/background.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-#textName{
-    font-size: 80px;
-    text-align: center;
-    vertical-align: middle;
-    font-weight: bold;
-    background: linear-gradient(to right, rgb(73, 230, 230) 0%, #e41fda);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+@media (max-width: 550px){
+    .welcome{
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+        position: fixed;
+        background-image: linear-gradient(#1F1C2C,#928DAB);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .welcome h2{
+        color: white
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #textName{
+        font-size: 50px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
+        color: white;
+    }  
 }
 
+@media (min-width: 600px){
+    .welcome{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        padding: 100px;
+        
+        background-size: 100% 100%;
+    }
+    .welcome h2{
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+    }
+    #textName{
+        font-size: 80px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
+        color: white;
+    }
+}
 .modal-header{
-    background-color: rgb(224, 103, 103);
+    background-color: #FC354C;
 }
 .modal-body{
     text-align: center;
@@ -60,56 +92,4 @@ form input{
 }
 .error{
     color: red;
-}
-/* Popup container */
-.popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-  
-  /* The actual popup (appears on top) */
-  .popup .popuptext {
-    visibility: hidden;
-    width: 160px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
-  }
-  
-  /* Popup arrow */
-  .popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-  
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
-  .popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
-  }
-  
-  /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-  }
+}  

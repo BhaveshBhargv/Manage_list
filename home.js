@@ -1,8 +1,19 @@
 function add() {
     var li = document.createElement("li");
+
     var inputValue = document.getElementById("input").value;
     var date = document.getElementById("datePickerId").value;
-    var temp = document.createTextNode('(complete by: '+date+') '+inputValue);
+ 
+    var icon = document.createTextNode("  \uf073 "+date+"  ");
+    li.appendChild(icon);
+
+    var btn3 = document.createElement("BUTTON");
+    var icon3 = document.createTextNode("\uf00c");
+    btn3.className = "btn btn-1 complete";
+    btn3.appendChild(icon3);
+    li.appendChild(btn3);
+
+    var temp = document.createTextNode(inputValue);
     var div = document.createElement("div");
     div.appendChild(temp)
     li.appendChild(div);
@@ -28,6 +39,21 @@ function add() {
     btn2.appendChild(icon2);
     li.appendChild(btn2);
 
+    var com = document.getElementsByClassName('complete');
+    for (var i = 0; i < com.length; i++) {
+        com[i].onclick = function() {
+            var temp = this.parentElement;
+            var temp2 = temp.childNodes;
+            if(temp2[2].style.textDecoration == "line-through"){
+                temp2[2].style.textDecoration = "";
+                temp.style.backgroundColor = "#a09d9b";
+            } else {
+                temp2[2].style.textDecoration = "line-through";
+                temp.style.backgroundColor = "#e0dbdb";
+            }
+        }
+    }   
+
     var del = document.getElementsByClassName("delete");
     for (var i = 0; i < del.length; i++) {
         del[i].onclick = function() {
@@ -41,18 +67,19 @@ function add() {
         edt[i].onclick = function() {
             var temp = this.parentElement;
             var temp2 = temp.childNodes;
-            if(temp2[0].contentEditable == "true"){
-                temp2[0].contentEditable = false;
-                temp2[0].style.backgroundColor = '';
+            if(temp2[2].contentEditable == "true"){
+                temp2[2].contentEditable = false;
+                temp2[2].style.backgroundColor = '';
             } else {
-                temp2[0].contentEditable = true;
-                temp2[0].style.backgroundColor = 'white';
+                temp2[2].contentEditable = true;
+                temp2[2].style.backgroundColor = 'white';
+                temp2[2].style.textDecoration = "";
             }
-            if(temp2[0].innerText == ""){
+            if(temp2[2].innerText == ""){
                 temp.style.display = "none";
             }
         }
-    }
+    }   
 }
 
 datePickerId.min = new Date().toISOString().split("T")[0];
